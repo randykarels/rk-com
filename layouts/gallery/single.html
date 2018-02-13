@@ -1,0 +1,12 @@
+{{ define "main" }}
+
+<h3>{{ .Title }}</h3>
+
+{{ .Content }}
+
+{{ $static_dir := .Params.static_dir}}
+{{ range .Params.images }}
+	<img src="{{ $static_dir }}{{ . }}" >
+{{ end }}
+
+{{ end }}

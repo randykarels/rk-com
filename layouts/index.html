@@ -1,0 +1,30 @@
+{{ define "title" }}Randy Karels Resume{{ end }}
+
+
+{{ define "css" }}
+<link rel="stylesheet" type="text/css" media="all" href="/css/resume.css">
+{{ end }}
+
+
+{{ define "main" }}
+
+    <!-- Note that the content for index.html, as a sort of list page, will pull from content/_index.md -->
+    {{- .Content -}}
+
+
+  <h2>Photo Galleries</h2>
+  <ul>
+  {{ range where .Site.RegularPages "Section" "gallery" }}
+    <li><a class="post-title" href="{{.RelPermalink}}">{{- .Title -}}</a></li>
+  {{ end }}
+  </ul>
+
+
+  <h2>Blog</h2>
+  <ul>
+  {{ range first 3 (where .Site.Pages "Section" "blog") }}
+    <li><a class="post-title" href="{{.RelPermalink}}">{{- .Title -}}</a></li>
+  {{ end }}
+</ul>
+
+{{ end }}

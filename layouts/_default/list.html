@@ -1,0 +1,13 @@
+{{define "main"}}
+  <h1>{{ .Title }}</h1>
+  <!-- Note that .Data.Pages is the equivalent of .Site.Pages on the homepage template. -->
+  <ul>
+   {{ range .Data.Pages }}
+  <li>
+  <a href="{{.Permalink}}">{{.Date.Format "2006-01-02"}} | {{.Title}}</a>
+ </li>
+   {{ end }}
+ </ul>
+</div>
+{{end}}
+
