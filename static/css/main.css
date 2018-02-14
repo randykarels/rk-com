@@ -541,6 +541,12 @@ h1 {
   font-size: 22.5px;
   font-weight: normal;
 }
+h1.headline {
+  font-size: 40.5px;
+  font-weight: 300;
+  color: #aaaaaa;
+  max-width: 500px;
+}
 h2 {
   font-size: 18px;
   font-weight: bold;
@@ -634,6 +640,8 @@ div.nav li {
   font-size: 13.5px;
   margin: 0 15px 0 0;
 }
+nav a,
+div.nav a,
 nav li a,
 div.nav li a {
   border: 0;

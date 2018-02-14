@@ -7,7 +7,7 @@ layout: resume
 
 ### resume content from /content/resume.md
 
-<h1 class="name"><span>Hi, I’m </span>Randy Karels<span>.<br>I’m a data analyst and web developer<br>from Minneapolis.</span></h1>
+<h1 class="headline"><span>Hi, I’m </span>Randy Karels<span>.<br>I’m a data analyst and web developer<br>from Minneapolis.</span></h1>
 
 <ul class="contact">
   <li><span>web</span><a href="http://randykarels.com">randykarels.com</a></li>
