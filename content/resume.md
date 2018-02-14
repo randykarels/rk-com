@@ -5,9 +5,7 @@ layout: resume
 
 ---
 
-### resume content from /content/resume.md
-
-<h1 class="headline"><span>Hi, I’m </span>Randy Karels<span>.<br>I’m a data analyst and web developer<br>from Minneapolis.</span></h1>
+<h1 class="headline">Hi, I’m <span class="text-black">Randy Karels</span>.<br>I’m a software engineer <br>in Minneapolis.</h1>
 
 <ul class="contact">
   <li><span>web</span><a href="http://randykarels.com">randykarels.com</a></li>
@@ -85,3 +83,6 @@ I specialized in demographic and market research, database analysis, and deliver
 
 
 ## BS Electrical Engineering (Summa Cum Laude)—University of Minnesota, 1998.
+
+
+### resume content from /content/resume.md

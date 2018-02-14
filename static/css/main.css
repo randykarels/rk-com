@@ -448,6 +448,9 @@ th {
 /* BASIC FONT SIZES */
 /* h2 */
 /* h1 */
+.text-black {
+  color: #333;
+}
 .opentype {
   font-kerning: normal;
   font-variant-ligatures: common-ligatures, contextual;
