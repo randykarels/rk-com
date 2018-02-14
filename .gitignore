@@ -1,2 +1,3 @@
 # the directory for built files
 public/
+node_modules/

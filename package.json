@@ -1,0 +1,14 @@
+{
+  "name": "rk-com-fe",
+  "version": "0.1.0",
+  "description": "Exploring new design",
+  "scripts": {
+    "build:less": "node_modules/less/bin/lessc less/main.less static/css/main.css",
+    "watch:less": "onchange 'less/*.less' -- npm run build:less",
+    "watch": "npm run watch:less"
+  },
+  "devDependencies": {
+    "less": "^2.7.3",
+    "onchange": "^3.2.1"
+  }
+}

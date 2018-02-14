@@ -5,7 +5,7 @@
     <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
 
     {{ block "css" .}}
-    <link rel="stylesheet" type="text/css" media="all" href="/css/resume.css">
+    <link rel="stylesheet" type="text/css" media="all" href="/css/main.css">
     {{ end }}
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
@@ -22,7 +22,7 @@
 
    </nav>
 
-   <div class="main">
+   <div class="page">
     {{ block "main" . }}
       {{ .Content }}
     {{ end }}

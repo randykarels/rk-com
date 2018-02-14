@@ -1,5 +1,6 @@
 {{ define "main" }}
 
+<article>
 <h3>{{ .Title }}</h3>
 
 {{ .Content }}
@@ -8,5 +9,6 @@
 {{ range .Params.images }}
 	<img src="{{ $static_dir }}{{ . }}" >
 {{ end }}
+</article>
 
 {{ end }}
