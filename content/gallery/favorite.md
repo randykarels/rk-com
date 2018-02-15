@@ -31,5 +31,3 @@ images: [
   favs-30.jpg,
  ]
 ---
-
- this content from content/gallery/favorite.md
