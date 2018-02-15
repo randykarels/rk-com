@@ -597,6 +597,21 @@ li {
     font-family: 'Fira Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   }
 }
+ul.contact li {
+  margin-right: 2em;
+  font-size: 13.5px;
+  list-style: none;
+}
+ul.contact li,
+ul.contact li a {
+  color: #666;
+}
+ul.contact span {
+  color: #333;
+  text-transform: uppercase;
+  font-size: 12px;
+  padding-right: 0.5em;
+}
 body {
   margin: 0;
   padding: 0;
@@ -649,6 +664,13 @@ nav li a,
 div.nav li a {
   border: 0;
   text-decoration: none;
+}
+nav a,
+div.nav a,
+nav a:visited,
+div.nav a:visited {
+  color: #666;
+  margin-right: 0.5em;
 }
 body.home-page nav {
   width: 90%;

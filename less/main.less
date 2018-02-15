@@ -21,6 +21,29 @@
 @import 'type.less';
 
 
+ul.contact {
+  
+
+  li {
+    margin-right:2em;
+    font-size: @font-size-small;
+    list-style: none;
+  }
+
+  li, li a {
+    color: @dark-grey;    
+  }
+
+  span {
+    color: @black;
+    text-transform: uppercase;
+    font-size: @font-size-smaller;
+    padding-right: 0.5em;
+  }
+
+}
+
+
 body {
   .no-margin-padding;
 
@@ -54,7 +77,12 @@ nav, div.nav {
 
   a, li a {
     border:0;
-    text-decoration: none;
+    text-decoration: none;    
+  }
+
+  a, a:visited {
+    color: @dark-grey;
+    margin-right: 0.5em;
   }
 }
 

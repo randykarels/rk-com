@@ -7,13 +7,6 @@ layout: resume
 
 <h1 class="headline">Hi, I’m <span class="text-black">Randy Karels</span>.<br>I’m a software engineer <br>in Minneapolis.</h1>
 
-<ul class="contact">
-  <li><span>web</span><a href="http://randykarels.com">randykarels.com</a></li>
-  <li><span>email</span>randy@randykarels.com</li>
-  <li><span>twitter</span><a href="http://twitter.com/randykarels">@randykarels</a></li>
-</ul>
-
-
 ## Data Analysis &amp; Information Design
 
 I create clear, compelling reports and graphics that solve people’s problems. I love information design and finding the best combination of text, tables, charts, and maps that most effectively illuminate trends in the data. I am proficient at querying databases and transforming raw data into useable data. I am comfortable designing for the boardroom, printed materials, web sites, or simple pdfs and spreadsheets.
