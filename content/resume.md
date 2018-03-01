@@ -24,13 +24,11 @@ I create clear, compelling reports and graphics that solve people’s problems. 
 
 I focus on web standards, clean code, and uncluttered layouts. I’ve designed and developed a wide range of sites for commercial, non-profit, government, and art clients. These have spanned from simple marketing brochures to sites with 1000’s of pages and years of archives. My designs have ranged from punchy photographic layouts to sophisticated data-heavy internal dashboards and tools. I’ve used a wide variety of off-the-shelf and custom content management systems, and I take pride in working closely with my clients to build successful sites that meet their needs and put the user first. My experience includes:
 
-<ul>
-<li>HTML5, CSS3, and CSS tools (LESS, Bootstrap)</li>
-<li>Javascript and various Javascript frameworks (D3, jQuery, Dojo, require.js)</li>
-<li>CMS’s written in php (WordPress, Expression Engine, Textpattern, and internal bespoke systems) and Python (Django, Flask)</li>
-<li>Photoshop and Illustrator for mockups and asset creation</li>
-<li>Version control (git, mercurial)</li>
-</ul>
+* HTML5, CSS3, and CSS tools (LESS, Bootstrap)
+* Javascript and various Javascript frameworks (D3, jQuery, Dojo, require.js)
+* CMS’s written in php (WordPress, Expression Engine, Textpattern, and internal bespoke systems) and Python (Django, Flask)
+* Photoshop and Illustrator for mockups and asset creation
+* Version control (git, mercurial)
 
 
 
