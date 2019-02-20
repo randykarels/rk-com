@@ -6,9 +6,9 @@
         <a class="post-title" href="{{.RelPermalink}}">{{ .Title }}</a>
         <span class="post-meta"><time>{{ .Date.Format "January 2, 2006" }}</time></span>
                          
-        <div class="post-summary">
+        <div class="post-summary"><p>
             {{ .Summary }} <!-- automatically takes the first paragraph in the .md article -->
-        </div>
+        </p></div>
  
         <p><small><a href="{{.RelPermalink}}" class="read-more-link">Read more ››</a></small></p>
     </div>
