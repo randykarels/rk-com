@@ -759,6 +759,23 @@ div.blogindex span.subtitle {
   color: #999;
   margin-left: 0.5em;
 }
+div.post a.post-title,
+div.post a.post-title:visited {
+  color: black;
+  font-weight: bold;
+}
+div.post time {
+  font-size: 0.8em;
+  color: #555;
+  text-transform: uppercase;
+}
+div.post a.read-more-link {
+  text-decoration: none;
+  border: none;
+}
+div.post div.post-summary p {
+  margin-bottom: 0;
+}
 div.thumbs {
   width: 90%;
   max-width: 1000px;
