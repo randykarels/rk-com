@@ -1,10 +1,12 @@
 {{ define "main" }}
+<div class="page">
+    
     <!-- Ranges through content/blog/*.md -->
     <!-- Paginator will create a collection of the relevant content type -->
     {{ range (.Paginator 100).Pages }}  
     <div class="post">
         <a class="post-title" href="{{.RelPermalink}}">{{ .Title }}</a>
-        <span class="post-meta"><time>{{ .Date.Format "January 2, 2006" }}</time></span>
+        <span class="post-meta"><time class="light-grey">{{ .Date.Format "January 2, 2006" }}</time></span>
                          
         <div class="post-summary"><p>
             {{ .Summary }} <!-- automatically takes the first paragraph in the .md article -->
@@ -12,7 +14,7 @@
  
         <p><small><a href="{{.RelPermalink}}" class="read-more-link">Read more ››</a></small></p>
     </div>
- 
     {{ end }}
 
+</div>
 {{ end }}

@@ -1,43 +1,88 @@
-
 //@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,200,700);
 //@import url(https://fonts.googleapis.com/css?family=Alegreya+Sans:400,300,700);
 @import url(https://fonts.googleapis.com/css?family=Fira+Sans:400,300,700);
 
-@import (inline) 'normalize.css';
+@import 'normalize';
 
 /* COLORS */
-@blue: #98EFF0;
-@highlight: cyan;
-@teal: #083D3D;
-@red: #D0021B;
-@dark-red: #963C32;
+$blue: #98EFF0;
+$highlight: cyan;
+$teal: #083D3D;
+$red: #D0021B;
+$dark-red: #963C32;
+$black: #333;
+$dark-grey: #666;
+$light-grey: #ccc;
 
-@black: #333;
-@dark-grey: #666;
+.light-grey {color: $light-grey;}
 
-@page-width-max: 1600px;
+$page-width-max: 1600px;
 
-@import 'helpers.less';
-@import 'type.less';
+%no-margin-padding {
+    margin:0;
+    padding:0;
+}
 
+@mixin page($mw:1000px) {
+    width:90%;
+    max-width:$mw;
+    margin:0 auto;
+    display:block;
+    position:relative;
+}
+
+@mixin two-color-gradient($topcolor, $bottomcolor) {
+    background: $topcolor; /* Old browsers */
+    background: -moz-linear-gradient(top,  $topcolor 0%, $bottomcolor 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom,
+    color-stop(0%,$topcolor), color-stop(100%,$bottomcolor)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  $topcolor 0%,$bottomcolor 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  $topcolor 0%,$bottomcolor 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  $topcolor 0%,$bottomcolor 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  $topcolor 0%,$bottomcolor 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(
+    startColorstr='$topcolor', endColorstr='$bottomcolor',GradientType=0 ); /* IE6-9 */
+  }
+
+@mixin border-radius ($radius: 5px) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+
+%hidetext {
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+%clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+%align-left {text-align: left};
+%align-right {text-align: right};
+
+@import 'type';
 
 ul.contact {
   
-
   li {
     margin-right:2em;
-    font-size: @font-size-small;
+    font-size: font-size-small;
     list-style: none;
   }
 
   li, li a {
-    color: @dark-grey;    
+    color: $dark-grey;    
   }
 
   span {
-    color: @black;
+    color: $black;
     text-transform: uppercase;
-    font-size: @font-size-smaller;
+    font-size: $font-size-smaller;
     padding-right: 0.5em;
   }
 
@@ -45,34 +90,34 @@ ul.contact {
 
 
 body {
-  .no-margin-padding;
+  @extend %no-margin-padding;
 
-  border-left:10px solid @highlight;
+  border-left:10px solid $highlight;
 
-  padding-top: (@font-size-large*2);
-  padding-bottom: (@font-size-large*5);
+  padding-top: ($font-size-large*2);
+  padding-bottom: ($font-size-large*5);
 }
 
 
 a#badge {
-  font-size:@font-size-large;
-  .page;
+  font-size:$font-size-large;
+  @include page;
   border:0;
   text-decoration:none;
   margin-bottom:0.25em;
-  color:@black;
+  color:$black;
 }
 
 nav, div.nav {
-  .page;
-  margin-bottom: (2 * @font-size-large);
+  @include page;
+  margin-bottom: (2 * $font-size-large);
 
-  ul {.no-margin-padding}
+  ul {@extend %no-margin-padding}
   li {display:inline-block;
-    .opentype;
+    @extend %opentype;
     text-transform: uppercase;
-    font-size: @font-size-small;
-    margin:0 @font-size-base 0 0;
+    font-size: $font-size-small;
+    margin:0 $font-size-base 0 0;
   }
 
   a, li a {
@@ -81,44 +126,44 @@ nav, div.nav {
   }
 
   a, a:visited {
-    color: @dark-grey;
+    color: $dark-grey;
     margin-right: 0.5em;
   }
 }
 
 body.home-page nav {
-  .page(@page-width-max);
+  @include page($page-width-max);
 }
 
 div.page {
-  .page;
+  @include page;
 }
 
 article {
   time {
-    font-size:@font-size-smaller;
+    font-size:$font-size-smaller;
     text-transform: uppercase;
     font-weight: normal;
   }
 
   header {
-    margin:0 0 (1* @font-size-large) 0;
+    margin:0 0 (1* $font-size-large) 0;
   }
 
   h1 {
-    font-size: (@font-size-base * 1.8);
+    font-size: ($font-size-base * 1.8);
     margin:0.25em 0;
     font-weight:300;
   }
 
   h2.subtitle {
-    font-size: (@font-size-large * 0.7);
+    font-size: ($font-size-large * 0.7);
     font-weight: bold;
     margin:0.25em 0;
   }
 
   p, li {
-    font-size: @font-size-base*1.1;
+    font-size: $font-size-base*1.1;
     line-height: 1.45em;
   }
 
@@ -128,7 +173,7 @@ article {
 
   p.caption {
     color:#555;
-    font-size:@font-size-smaller;
+    font-size:$font-size-smaller;
     line-height: 1.2em;
     font-weight: 400;
   }
@@ -138,44 +183,23 @@ article {
   }
 }
 
-
-div.blogindex {
-
-  ul {margin-bottom:2em;}
-
-  ul li {
-    list-style: none;
-  }
-
-  li.date {
-    font-size:@font-size-smaller;
-    text-transform: uppercase;
-    font-weight: normal;
-    color: #999;
-  }
-
-  li.title {
-    color:black;
-  }
-
-  span.subtitle {
-    font-size:@font-size-small;
-    color:#999;
-    margin-left:0.5em;
-  }
-
-}
-
 div.post {
   a.post-title, a.post-title:visited {
     color:black;
     font-weight:bold;
+    text-decoration: none;
+  }
+
+  a.post-title:hover {
+      color: $teal;
+      text-decoration: underline;
   }
 
   time {
     font-size:0.8em;
     color:#555;
     text-transform: uppercase;
+    margin-left:0.5em;
   }
 
   a.read-more-link {
@@ -192,7 +216,7 @@ div.post {
 
 
 div.thumbs {
- .page;
+ @include page;
 }
 
  div.thumb {
@@ -205,7 +229,7 @@ div.thumbs {
    p {position:absolute;
      margin:0;
      padding:0;
-     font-size:@font-size-medium;
+     font-size:$font-size-medium;
      font-weight: normal;
      font-style: italic;
      text-transform: uppercase;
@@ -222,14 +246,14 @@ div.thumbs {
     }
  }
 
- @contrast: 30%;
+ $contrast: 30%;
  div.thumb:hover {
-  .two-color-gradient(darkblue, cyan);
+  @include two-color-gradient(darkblue, cyan);
   p {color:yellow;}
   img {
     opacity:0.8;
-    -webkit-filter: contrast(@contrast) grayscale(50%);
-    filter: contrast(@contrast) grayscale(50%);
+    -webkit-filter: contrast($contrast) grayscale(50%);
+    filter: contrast($contrast) grayscale(50%);
    }
  }
 
@@ -237,7 +261,7 @@ div.thumbs {
 
 
  div.home-wrapper {
-  .page(@page-width-max);
+  @include page($page-width-max);
   display:flex;
   flex-direction:row;
   flex-wrap:nowrap;
@@ -267,7 +291,7 @@ div.thumbs {
   //border:1px solid green;
 
   div.home-thumbs {
-    .two-color-gradient(cyan, darkblue);
+    @include two-color-gradient(cyan, darkblue);
   }
 
   div.thumb {
@@ -303,12 +327,12 @@ div.thumbs {
   //border:1px solid green;
 
   p {
-    font-size:@font-size-small;
+    font-size:$font-size-small;
     line-height: 1.2em;
     color:#444;
   }
  }
 
 pre, code {
-  .monospace;
+  @extend %monospace;
 }
