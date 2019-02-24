@@ -1,6 +1,4 @@
-{{ define "title" }}
-A blog, of sorts
-{{ end }}
+{{ define "title" }}A blog, of sorts{{ end }}
 
 {{ define "main" }}
 <div class="page">
@@ -8,15 +6,13 @@ A blog, of sorts
     <!-- Ranges through content/blog/*.md -->
     <!-- Paginator will create a collection of the relevant content type -->
     {{ range (.Paginator 100).Pages }}  
-    <div class="post">
-        <a class="post-title" href="{{.RelPermalink}}">{{ .Title }}</a>
-        <span class="post-meta"><time class="light-grey">{{ .Date.Format "January 2, 2006" }}</time></span>
+    <div class="blog-list-item">
+        <time class="light-grey">{{ .Date.Format "January 2, 2006" }}</time>
+        <h1><a class="post-title" href="{{.RelPermalink}}">{{ .Title }}</a></h1>
+        {{ if isset .Params "subtitle" }}
+          <h2 class="subtitle">{{ index .Params "subtitle" }}</h2>
+        {{ end }}
                          
-        <div class="post-summary"><p>
-            {{ .Summary }} <!-- automatically takes the first paragraph in the .md article -->
-        </p></div>
- 
-        <p><small><a href="{{.RelPermalink}}" class="read-more-link">Read more ››</a></small></p>
     </div>
     {{ end }}
 

@@ -159,7 +159,14 @@ article {
   h2.subtitle {
     font-size: ($font-size-medium);
     font-weight: bold;
-    margin:0.25em 0;
+    color: $dark-grey;
+    margin:-2em 0 1em 0;
+  }
+
+  span.subtitle {
+    font-size: 0.6em;
+    color: $dark-grey;
+    padding:1em 0;
   }
 
   p, li {
@@ -183,7 +190,20 @@ article {
   }
 }
 
-div.post {
+div.blog-list-item {
+    margin-bottom: 2em;
+    h1 {
+        font-size: $font-size-medium;
+        margin:0.25em 0;
+    }
+
+    h2 {
+        font-size: ($font-size-medium * 0.8);
+        color:$dark-grey;
+        margin:0;
+        font-weight: normal;
+    }
+
   a.post-title, a.post-title:visited {
     color:black;
     font-weight:bold;
@@ -199,7 +219,6 @@ div.post {
     font-size:0.8em;
     color:#555;
     text-transform: uppercase;
-    margin-left:0.5em;
   }
 
   a.read-more-link {

@@ -1,0 +1,17 @@
+{{ define "title" }}
+ {{ .Title }}
+{{ end }}
+
+
+{{define "main"}}
+<article>
+  <time class="light-grey">{{ .Date.Format "January 2, 2006" }}</time>
+  <h1>{{ .Title }}
+    {{ if isset .Params "subtitle" }}
+      <span class="subtitle">{{ index .Params "subtitle" }}</span>
+    {{ end }}
+  </h1>
+  {{ .Content }}
+
+</article>
+{{ end }}

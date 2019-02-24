@@ -13,6 +13,10 @@ $font-size-huge: ($font-size-base * 2.5);
   color: $black;
 }
 
+.smaller {
+  text-size:0.8em;
+}
+
 %opentype {
   font-kerning: normal;
   font-variant-ligatures: common-ligatures, contextual;
