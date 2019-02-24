@@ -151,19 +151,19 @@ article {
   }
 
   h1 {
-    font-size: ($font-size-base * 1.8);
-    margin:0.25em 0;
+    font-size: $font-size-large;
+    margin:2em 0 1em 0;
     font-weight:300;
   }
 
   h2.subtitle {
-    font-size: ($font-size-large * 0.7);
+    font-size: ($font-size-medium);
     font-weight: bold;
     margin:0.25em 0;
   }
 
   p, li {
-    font-size: $font-size-base*1.1;
+    font-size: $font-size-base;
     line-height: 1.45em;
   }
 
