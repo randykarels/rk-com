@@ -1,0 +1,36 @@
+---
+title: India 2
+static_dir: "/images/galleries/india2/"
+images: [
+  india2-01.jpg,
+  india2-02.jpg,
+  india2-03.jpg,
+  india2-04.jpg,
+  india2-05.jpg,
+  india2-07.jpg,
+  india2-09.jpg,
+  india2-10.jpg,
+  india2-11.jpg,
+  india2-13.jpg,
+  india2-14.jpg,
+  india2-15.jpg,
+  india2-16.jpg,
+  india2-17.jpg,
+  india2-18.jpg,
+  india2-19.jpg,
+  india2-20.jpg,
+  india2-21.jpg,
+  india2-22.jpg,
+  india2-23.jpg,
+  india2-24.jpg,
+  india2-25.jpg,
+  india2-26.jpg,
+  india2-27.jpg,
+  india2-28.jpg,
+  india2-29.jpg,
+  india2-30.jpg,
+  india2-31.jpg,
+  india2-32.jpg,
+  india2-33.jpg,
+]
+---

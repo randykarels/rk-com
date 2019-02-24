@@ -1,0 +1,37 @@
+---
+title: India 1
+static_dir: "/images/galleries/india1/"
+images: [
+  india1-01.jpg,
+  india1-02.jpg,
+  india1-03.jpg,
+  india1-05.jpg,
+  india1-07.jpg,
+  india1-09.jpg,
+  india1-10.jpg,
+  india1-11.jpg,
+  india1-12.jpg,
+  india1-13.jpg,
+  india1-14.jpg,
+  india1-15.jpg,
+  india1-16.jpg,
+  india1-17.jpg,
+  india1-18.jpg,
+  india1-19.jpg,
+  india1-20.jpg,
+  india1-21.jpg,
+  india1-22.jpg,
+  india1-23.jpg,
+  india1-24.jpg,
+  india1-25.jpg,
+  india1-26.jpg,
+  india1-27.jpg,
+  india1-28.jpg,
+  india1-29.jpg,
+  india1-30.jpg,
+  india1-31.jpg,
+  india1-32.jpg,
+  india1-33.jpg,
+  india1-34.jpg,
+]
+---
