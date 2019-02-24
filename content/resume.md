@@ -39,7 +39,7 @@ I focus on web standards, clean code, and uncluttered layouts. I’ve designed a
 Full-stack web development and big-data analytics.
 
 
-## SparkFun Electronics, Senior Data Developer <span>2010-2016</span>
+## SparkFun Electronics, Senior Data Developer <span>2011-2016</span>
 
 SparkFun designs, manufactures, and sells DIY electronics. We are the leader in our market, selling over $30 million of products yearly to customers around the world. My projects range from spreadsheets to high-polish printed reports to full stack web-based dashboards. I rely on both internal databases and external APIs that feed into a library of queries I’ve developed. My responsibilities include:</p>
 
