@@ -2,7 +2,7 @@
 type: static
 title: "Just a resume"
 layout: resume
-
+bodyKlass: section-resume
 ---
 
 <h1 class="headline">Hi, I’m <span class="text-black">Randy Karels</span>.<br>I’m a software engineer <br>in Minneapolis.</h1>
