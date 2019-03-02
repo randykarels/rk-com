@@ -1,0 +1,22 @@
+body.section-blog {
+  border-left-color: $black;
+}
+
+body.section-gallery {
+  border-left-color: #000;
+  background-color: $black;
+
+  p, a, a:visited, h1 {
+    color:white;
+  }
+
+  a:hover {
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  div.image img {
+    border:1px solid #ccc;
+    margin:24px 0;
+  }
+}

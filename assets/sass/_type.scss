@@ -149,6 +149,7 @@ p a, li a {
 p a:hover, li a:hover {
   background:yellow;
   border-bottom-color:yellow;
+  cursor: pointer;
 }
 
 ul, ol {

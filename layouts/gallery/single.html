@@ -4,13 +4,15 @@
 {{ define "main" }}
 
 <article>
-<h3>{{ .Title }}</h3>
+<h1>{{ .Title }}</h1>
 
 {{ .Content }}
 
 {{ $static_dir := .Params.static_dir}}
 {{ range .Params.images }}
+  <div class="image">
 	<img src="{{ $static_dir }}{{ . }}" >
+  </div>
 {{ end }}
 </article>
 

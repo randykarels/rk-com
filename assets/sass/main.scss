@@ -99,6 +99,7 @@ body {
 }
 
 
+
 a#badge {
   font-size:$font-size-large;
   @include page;
@@ -232,8 +233,6 @@ div.blog-list-item {
 }
 
 
-
-
 div.thumbs {
  @include page;
 }
@@ -355,3 +354,5 @@ div.thumbs {
 pre, code {
   @extend %monospace;
 }
+
+@import 'gallery';
