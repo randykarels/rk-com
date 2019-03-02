@@ -2,6 +2,7 @@
 title: Flowers
 static_dir: "/images/galleries/flowers/"
 images: [
+  _banner.jpg,
   flowers-01.jpg,
   flowers-02.jpg,
   flowers-03.jpg,

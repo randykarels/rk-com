@@ -2,6 +2,7 @@
 title: Misc
 static_dir: "/images/galleries/misc/"
 images: [
+  _banner.jpg,
   misc-02.jpg,
   misc-03.jpg,
   misc-04.jpg,

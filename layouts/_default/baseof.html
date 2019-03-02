@@ -20,7 +20,7 @@
     {{ $bodyKlass = "section-home"}}
   {{ else }}
     {{ $bodyKlass = (printf "section-%s" .Section ) }}
-  {{end }}
+  {{ end }}
   <body class="{{ $bodyKlass }}">
 
    <nav>

@@ -2,6 +2,7 @@
 title: Harvest
 static_dir: "/images/galleries/harvest/"
 images: [
+  _banner.jpg,
   harvest-01.jpg,
   harvest-02.jpg,
   harvest-03.jpg,

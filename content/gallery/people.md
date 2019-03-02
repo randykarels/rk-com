@@ -2,6 +2,7 @@
 title: People
 static_dir: "/images/galleries/people/"
 images: [
+  _banner.jpg,
   people-01.jpg,
   people-02.jpg,
   people-03.jpg,

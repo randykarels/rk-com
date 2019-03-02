@@ -2,6 +2,7 @@
 title: Favorites
 static_dir: "/images/galleries/favs/"
 images: [
+  _banner.jpg,
   favs-04.jpg,
   favs-07.jpg,
   favs-10.jpg,

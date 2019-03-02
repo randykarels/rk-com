@@ -2,6 +2,7 @@
 title: India 2
 static_dir: "/images/galleries/india2/"
 images: [
+  _banner.jpg,
   india2-01.jpg,
   india2-02.jpg,
   india2-03.jpg,

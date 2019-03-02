@@ -2,6 +2,7 @@
 title: Japan
 static_dir: "/images/galleries/japan/"
 images: [
+  _banner.jpg,
   japan-02.jpg,
   japan-03.jpg,
   japan-04.jpg,

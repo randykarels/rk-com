@@ -2,6 +2,7 @@
 title: Dakota
 static_dir: "/images/galleries/dakota/"
 images: [
+  _banner.jpg,
   dakota-02.jpg,
   dakota-03.jpg,
   dakota-04.jpg,

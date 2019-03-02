@@ -2,6 +2,7 @@
 title: Desert
 static_dir: "/images/galleries/desert/"
 images: [
+  _banner.jpg,
   desert-02.jpg,
   desert-03.jpg,
   desert-04.jpg,

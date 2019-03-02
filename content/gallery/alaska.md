@@ -2,7 +2,9 @@
 title: Alaska
 static_dir: "/images/galleries/alaska/"
 images: [
-  alaska-01.jpg, alaska-02.jpg,
+  _banner.jpg,
+  alaska-01.jpg,
+  alaska-02.jpg,
 alaska-03.jpg, alaska-04.jpg, alaska-05.jpg, alaska-06.jpg,
 alaska-07.jpg, alaska-08.jpg, alaska-10.jpg, alaska-11.jpg,
 alaska-12.jpg, alaska-13.jpg, alaska-14.jpg, alaska-15.jpg,

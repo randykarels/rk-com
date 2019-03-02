@@ -15,8 +15,15 @@ body.section-gallery {
     cursor: pointer;
   }
 
-  div.image img {
-    border:1px solid #ccc;
-    margin:24px 0;
+  div.image {
+      img {
+        border:1px solid #ccc;
+        margin:24px 0;
+        width: 100%;
+    }
+ }
+
+  div.image.no-border img {
+      border: transparent;
   }
 }

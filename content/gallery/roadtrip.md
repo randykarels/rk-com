@@ -2,6 +2,7 @@
 title: Roadtrip
 static_dir: "/images/galleries/roadtrip/"
 images: [
+  _banner.jpg,
   roadtrip-01.jpg,
   roadtrip-02.jpg,
   roadtrip-03.jpg,

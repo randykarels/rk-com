@@ -2,6 +2,7 @@
 title: Sierra
 static_dir: "/images/galleries/sierra/"
 images: [
+  _banner.jpg,
   sierra-01.jpg,
   sierra-02.jpg,
   sierra-03.jpg,
