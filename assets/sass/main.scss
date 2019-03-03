@@ -113,15 +113,14 @@ nav, div.nav {
   @include page;
   margin-bottom: (2 * $font-size-large);
 
-  ul {@extend %no-margin-padding}
   li {display:inline-block;
-    @extend %opentype;
-    text-transform: uppercase;
-    font-size: $font-size-small;
     margin:0 $font-size-base 0 0;
   }
 
   a, li a {
+    @extend %opentype;
+    text-transform: uppercase;
+    font-size: $font-size-small;
     border:0;
     text-decoration: none;    
   }
@@ -234,19 +233,22 @@ div.thumbs {
 }
 
 div.home-thumbs {
+  padding:3px solid transparent;
   background-color:white;
-  overflow:auto; // to take height of floated children
+  overflow:hidden; // to take height of floated children
   @include two-color-gradient(cyan, darkblue);
 }
 
 
 $contrast: 30%;
-$greyscale: 50%;
+$greyscale: 60%;
 div.thumb {
   float: left;
   position:relative;
   box-sizing: border-box;
   width:(100%/3);
+  line-height: 0; // fixes spacing issues with svg.placeholder
+
 
     p {position:absolute;
       margin:0;
@@ -261,9 +263,14 @@ div.thumb {
     img {
     width:100%;
     display:block;
-    opacity:0.8;
+    opacity:0.9;
     -webkit-filter: contrast($contrast) grayscale($greyscale);
     filter: contrast($contrast) grayscale($greyscale);
+    }
+
+    svg.placeholder {
+      display:inline-block;
+      opacity:0.9;
     }
 }
 
