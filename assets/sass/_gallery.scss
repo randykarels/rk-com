@@ -26,4 +26,28 @@ body.section-gallery {
   div.image.no-border img {
       border: transparent;
   }
+
+  div.gallery-thumbs {
+      display:block;
+      overflow:hidden;
+      line-height:0;
+      
+      div.gallery-thumb {
+          float:left;
+          width:(100%/2);
+          position:relative;
+
+        img {
+            width: 100%;
+        }
+          a span {
+              position: absolute;
+              top: 5%;
+              left: 2%;
+              text-transform: uppercase;
+              color: white;
+              text-decoration: none;
+          }
+      }
+  }
 }
