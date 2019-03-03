@@ -132,10 +132,6 @@ nav, div.nav {
   }
 }
 
-body.home-page nav {
-  @include page($page-width-max);
-}
-
 div.page {
   @include page;
 }
@@ -237,12 +233,14 @@ div.thumbs {
  @include page;
 }
 
+$contrast: 30%;
  div.thumb {
   background-color:white;
   float:left;
   position:relative;
   box-sizing: border-box;
-  width:(100%/2);
+  width:(100%/3);
+  @include two-color-gradient(darkblue, cyan);
 
    p {position:absolute;
      margin:0;
@@ -258,24 +256,20 @@ div.thumbs {
    img {
     width:100%;
     display:block;
-    opacity:1;
-    -webkit-filter: contrast(100%) grayscale(0%);
-    filter: contrast(100%) grayscale(0%);
-    }
- }
-
- $contrast: 30%;
- div.thumb:hover {
-  @include two-color-gradient(darkblue, cyan);
-  p {color:yellow;}
-  img {
     opacity:0.8;
     -webkit-filter: contrast($contrast) grayscale(50%);
     filter: contrast($contrast) grayscale(50%);
    }
  }
 
-
+ div.thumb:hover {
+  p {color:yellow;}
+  img {
+    opacity:1;
+    -webkit-filter: contrast(100%) grayscale(0%);
+    filter: contrast(100%) grayscale(0%);
+    }
+ }
 
 
  div.home-wrapper {
@@ -301,7 +295,7 @@ div.thumbs {
   flex:4 1 60%;
  }
 
-
+/*
  div.column.column-two {
   flex:2 1 20%;
   min-width:200px;
@@ -350,6 +344,11 @@ div.thumbs {
     color:#444;
   }
  }
+*/
+
+section.clearfix:after {
+  @extend %clearfix:after;
+}
 
 pre, code {
   @extend %monospace;

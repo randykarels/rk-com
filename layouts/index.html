@@ -3,25 +3,34 @@
     <!-- Note that the content for index.html, as a sort of list page, will pull from content/_index.md -->
     {{- .Content -}}
 
-
+  <section class="clearfix">
   <h2>Photo Galleries</h2>
-  <ul>
+  <div class="home-thumbs">
   {{ range where .Site.RegularPages "Section" "gallery" }}
-    <li><a class="post-title" href="{{.RelPermalink}}">{{- .Title -}}</a></li>
+    <div class="thumb"><a href="{{.RelPermalink}}">
+    {{ with .Resources.GetMatch "thumb.jpg" }}
+      {{ $image_smaller := .Resize "400x q95 Linear" }} 
+      <img src="{{ $image_smaller.RelPermalink }}" >
+    {{ end }}
+    <p >{{- .Title -}}</p>
+  </a></div>
   {{ end }}
-  </ul>
+    </div>
+  </section>
 
-
+<section class="clearfix">
   <h2>Blog</h2>
   <ul>
-  {{ range first 3 (where .Site.Pages "Section" "blog") }}
+  {{ range first 4 (where .Site.Pages "Section" "blog") }}
     <li><a class="post-title" href="{{.RelPermalink}}">{{- .Title -}}</a></li>
   {{ end }}
 </ul>
+</section>
 
+<section class="clearfix">
   <h2>Contact</h2>
   
   {{ partial "contact.html" . }}
-
+</section>
 
 {{ end }}
