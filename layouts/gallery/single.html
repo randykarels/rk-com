@@ -8,17 +8,15 @@
 
 {{ .Content }}
 
-{{ $static_dir := .Params.static_dir}}
-{{ range $i, $photo_name := .Params.images }}
-	{{ $imgKlass := ""}}
-	{{ if eq $photo_name "_banner.jpg" }}
-		{{ $imgKlass = "no-border" }}
+{{ with .Resources.Match "images/*.jpg" }}
+	{{ range . }}
+	<div class="image">
+		<img src="{{ .RelPermalink }}" >
+	</div>
 	{{ end }}
-
-  <div class="image {{ $imgKlass }}">
-	<img src="{{ $static_dir }}{{ $photo_name }}" >
-  </div>
 {{ end }}
+
+
 </article>
 
 {{ end }}
