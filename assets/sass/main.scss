@@ -1,6 +1,6 @@
 //@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,200,700);
 //@import url(https://fonts.googleapis.com/css?family=Alegreya+Sans:400,300,700);
-@import url(https://fonts.googleapis.com/css?family=Fira+Sans:400,300,700);
+@import url(https://fonts.googleapis.com/css?family=Fira+Sans:400,200,600);
 
 @import 'normalize';
 
@@ -233,34 +233,39 @@ div.thumbs {
  @include page;
 }
 
-$contrast: 30%;
- div.thumb {
+div.home-thumbs {
   background-color:white;
-  float:left;
+  overflow:auto; // to take height of floated children
+  @include two-color-gradient(cyan, darkblue);
+}
+
+
+$contrast: 30%;
+$greyscale: 50%;
+div.thumb {
+  float: left;
   position:relative;
   box-sizing: border-box;
   width:(100%/3);
-  @include two-color-gradient(darkblue, cyan);
 
-   p {position:absolute;
-     margin:0;
-     padding:0;
-     font-size:$font-size-medium;
-     font-weight: normal;
-     font-style: italic;
-     text-transform: uppercase;
-     color:white;
-     z-index: 100;
-     top:3%; left:3%;
-   }
-   img {
+    p {position:absolute;
+      margin:0;
+      padding:0;
+      font-size:$font-size-small;
+      font-weight: normal;
+      text-transform: uppercase;
+      color:white;
+      z-index: 100;
+      top:3%; left:3%;
+    }
+    img {
     width:100%;
     display:block;
     opacity:0.8;
-    -webkit-filter: contrast($contrast) grayscale(50%);
-    filter: contrast($contrast) grayscale(50%);
-   }
- }
+    -webkit-filter: contrast($contrast) grayscale($greyscale);
+    filter: contrast($contrast) grayscale($greyscale);
+    }
+}
 
  div.thumb:hover {
   p {color:yellow;}
@@ -270,81 +275,6 @@ $contrast: 30%;
     filter: contrast(100%) grayscale(0%);
     }
  }
-
-
- div.home-wrapper {
-  @include page($page-width-max);
-  display:flex;
-  flex-direction:row;
-  flex-wrap:nowrap;
-  margin:0 auto;
- }
-
- div.column {
-   order:1;
-   flex:0 1 auto;
- }
-
- div.column + div.column {
-   padding-left:45px;
- }
-
- div.column-one {
-  min-width: 300px;
-  max-width: 800px;
-  flex:4 1 60%;
- }
-
-/*
- div.column.column-two {
-  flex:2 1 20%;
-  min-width:200px;
-  max-width:300px;
-  //border:1px solid green;
-
-  div.home-thumbs {
-    @include two-color-gradient(cyan, darkblue);
-  }
-
-  div.thumb {
-    width:100%;
-    float:none;
-    display:block;
-    background-color: transparent;
-    border-bottom:4px solid white;
-    img {
-      opacity:0.85;
-      -webkit-filter: contrast(50%) grayscale(40%);
-      filter: contrast(50%) grayscale(40%);
-     }
-  }
-
-   div.thumb:hover {
-    p {color:yellow;}
-    background-color: transparent;
-    img {
-      opacity:1;
-      -webkit-filter: contrast(100%) grayscale(0%);
-      filter: contrast(100%) grayscale(0%);
-     }
-   }
-
-
- }
-
- div.column.column-three {
-  flex:1 1 10%;
-  min-width:150px;
-  max-width:250px;
-  //border:1px solid green;
-
-  p {
-    font-size:$font-size-small;
-    line-height: 1.2em;
-    color:#444;
-  }
- }
-*/
 
 section.clearfix:after {
   @extend %clearfix:after;
