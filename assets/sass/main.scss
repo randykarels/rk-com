@@ -98,6 +98,9 @@ body {
   }
 }
 
+body.section-blog {
+  border-left-color: $black;
+}
 
 nav, div.nav {
   @include page;

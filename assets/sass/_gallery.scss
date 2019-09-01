@@ -1,23 +1,28 @@
-body.section-blog {
-  border-left-color: $black;
-}
-
 body.section-gallery {
   border-left: none;
   background-color: $black;
 
-  p, a, a:visited, h1 {
+  div.page {
+    @media (max-width: $break-medium) {
+      margin: 0;
+      width: 100%;
+    }  
+  }
+
+  p, a, a:visited {
     color:white;
   }
 
-  // a:hover {
-  //   background-color: transparent;
-  //   cursor: pointer;
-  // }
+  h1 {
+    color: white;
+    @media (max-width: $break-medium) {
+      text-align: center;
+    }  
+  }
 
   div.single-image {
     position: relative;
-    display: block;
+    display: inline-block;
     margin-bottom: 24px;
     width:auto;
 
@@ -29,8 +34,10 @@ body.section-gallery {
       height:100%;
     }
     img {
-        
-        //width: 100%;
+        display: block;
+        @media (max-width: $break-large) {
+          width:100%;
+        }
     }
  }
 
