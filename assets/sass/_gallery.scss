@@ -24,15 +24,22 @@ body.section-gallery {
     position: relative;
     display: inline-block;
     margin-bottom: 24px;
-    width:auto;
 
     img {
         display: block;
-        @media (max-width: $break-large) {
-          width:100%;
-        }
+    }
+
+    img.width-big {
+      width: 100%;
+    }
+    img.width-standard {
+      @media (max-width: $break-large) {
+        width:100%;
+      }
     }
  }
+
+
 
 //   div.image.no-border img {
 //       border: transparent;

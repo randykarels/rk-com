@@ -1,4 +1,4 @@
-{{ define "title" }}{{ .Title }}{{ end }}
+{{ define "title" }}{{ .Title }} Gallery{{ end }}
 
 
 {{ define "main" }}
@@ -6,14 +6,35 @@
 <article>
 <h1>{{ .Title }}</h1>
 
-{{ .Content }}
+<p>{{ .Content }}</p>
 
+{{ if (.Params.highResolution) }}
+	{{ range $index, $img := .Resources.Match "images/*.jpg" }}
+		{{ $img_large := $img.Resize "1200x q85 Linear" }} 
+		{{ $img_medium := $img.Resize "800x q85 Linear" }} 
+		{{ $img_small := $img.Resize "400x q85 Linear" }} 
+		<div class="single-image high-resolution">
+			<img class="width-big" 
+				 src="{{ $img_medium.RelPermalink }}" 
+				 srcset="{{ $img.RelPermalink }} 1800w,
+				         {{ $img_large.RelPermalink }} 1200w,
+                         {{ $img_medium.RelPermalink }} 800w,
+             			 {{ $img_small.RelPermalink }} 400w"
+				 sizes="(min-width: 1330px) 1200px,
+				        (min-width: 800px) 90vw,
+				        100vw"
+						  >
+		</div>
+	{{ end }}
+
+{{ else }}
 {{ range $index, $img := .Resources.Match "images/*.jpg" }}
 	<div class="single-image">
-		<img src="{{ $img.RelPermalink }}" >
+		<img class="width-std" src="{{ $img.RelPermalink }}" >
 	</div>
 {{ end }}
 
+{{ end }}
 
 </article>
 
