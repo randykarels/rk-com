@@ -29,7 +29,7 @@
 <section class="clearfix">
   <h2>Blog</h2>
   <ul>
-  {{ range first 4 (where .Site.Pages "Section" "blog") }}
+  {{ range first 5 (where .Site.RegularPages "Section" "blog") }}
     <li><a class="post-title" href="{{.RelPermalink}}">{{- .Title -}}</a></li>
   {{ end }}
 </ul>
