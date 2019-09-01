@@ -10,7 +10,12 @@
 
 {{ with .Resources.Match "images/*.jpg" }}
 	{{ range . }}
-	<div class="image">
+	<div class="single-image">
+
+		<svg class="frame" xmlns="http://www.w3.org/2000/svg" version="1.1">
+     		<rect height="100%" width="100%" stroke="black" stroke-width="10%" fill="none" />
+		</svg> 
+
 		<img src="{{ .RelPermalink }}" >
 	</div>
 	{{ end }}

@@ -3,11 +3,13 @@ Photos
 {{ end }}
 
 {{define "main"}}
-  <div class="gallery-thumbs">
+  <div class="gallery-grid">
    {{ range .Data.Pages }}
-    <div class="gallery-thumb"><a href="{{ .RelPermalink }}">
-      <span>{{ .Title }}</span>
-      {{ with .Resources.GetMatch "images/*.jpg" }}
+    <div class="gallery-item">
+      <a href="{{ .RelPermalink }}">
+        <span class="title">{{ .Title }}</span>
+      
+        {{ with .Resources.GetMatch "thumb.jpg" }}
         <img src="{{ .RelPermalink }}" >
 	    {{ end }}
     </a></div>
