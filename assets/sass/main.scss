@@ -16,14 +16,18 @@ $light-grey: #ccc;
 
 .light-grey {color: $light-grey;}
 
-$page-width-max: 1600px;
+$break-xxlarge: 1600px;
+$break-xlarge: 1200px;
+$break-large: 1000px;
+$break-medium: 800px;
+$break-small: 500px;
 
 %no-margin-padding {
     margin:0;
     padding:0;
 }
 
-@mixin page($mw:1000px) {
+@mixin page($mw:$break-xlarge) {
     width:90%;
     max-width:$mw;
     margin:0 auto;
@@ -43,12 +47,6 @@ $page-width-max: 1600px;
     filter: progid:DXImageTransform.Microsoft.gradient(
     startColorstr='$topcolor', endColorstr='$bottomcolor',GradientType=0 ); /* IE6-9 */
   }
-
-@mixin border-radius ($radius: 5px) {
-    -webkit-border-radius: $radius;
-    -moz-border-radius: $radius;
-    border-radius: $radius;
-}
 
 %hidetext {
     text-indent: 100%;
@@ -91,23 +89,15 @@ ul.contact {
 
 body {
   @extend %no-margin-padding;
-
   border-left:10px solid $highlight;
-
   padding-top: ($font-size-large*2);
   padding-bottom: ($font-size-large*5);
+
+  @media (max-width: $break-medium) {
+    border-left: None;
+  }
 }
 
-
-
-a#badge {
-  font-size:$font-size-large;
-  @include page;
-  border:0;
-  text-decoration:none;
-  margin-bottom:0.25em;
-  color:$black;
-}
 
 nav, div.nav {
   @include page;
@@ -232,13 +222,6 @@ div.thumbs {
  @include page;
 }
 
-div.home-thumbs {
-  padding:3px solid transparent;
-  background-color:white;
-  overflow:hidden; // to take height of floated children
-  @include two-color-gradient(cyan, darkblue);
-}
-
 
 $contrast: 30%;
 $greyscale: 60%;
@@ -249,39 +232,48 @@ div.thumb {
   width:(100%/3);
   line-height: 0; // fixes spacing issues with svg.placeholder
 
-
-    p {position:absolute;
-      margin:0;
-      padding:0;
-      font-size:$font-size-small;
-      font-weight: normal;
-      text-transform: uppercase;
-      color:white;
-      z-index: 100;
-      top:3%; left:3%;
-    }
-    img {
-    width:100%;
-    display:block;
-    opacity:0.9;
-    -webkit-filter: contrast($contrast) grayscale($greyscale);
-    filter: contrast($contrast) grayscale($greyscale);
-    }
-
     svg.placeholder {
       display:inline-block;
       opacity:0.9;
     }
 }
 
- div.thumb:hover {
-  p {color:yellow;}
-  img {
-    opacity:1;
-    -webkit-filter: contrast(100%) grayscale(0%);
-    filter: contrast(100%) grayscale(0%);
+
+
+
+div.home-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  @media (max-width: $break-large) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (max-width: $break-small) {
+    grid-template-columns: 1fr;
+  }
+
+  div.grid-item {
+    position: relative;
+
+    p {
+      position:absolute;
+      margin:0;
+      padding:0.25em 0.5em;
+      font-size:$font-size-small;
+      font-weight: bold;
+      text-transform: uppercase;
+      color:white;
+      z-index: 100;
+      top:0; left:0;
+      background-color: rgba(10, 10, 10 , 0.6);
     }
- }
+    img {
+      width:100%;
+      display: block; // needed to remove some bottom whitespace
+    }
+  }
+
+}
 
 section.clearfix:after {
   @extend %clearfix:after;

@@ -5,25 +5,18 @@
 
   <section class="clearfix">
   <h2>Photo Galleries</h2>
-  <div class="home-thumbs">
+  <div class="home-grid">
   {{ range where .Site.RegularPages "Section" "gallery" }}
-    <div class="thumb"><a href="{{.RelPermalink}}">
+  <a href="{{.RelPermalink}}">
+    <div class="grid-item">
     {{ with .Resources.GetMatch "thumb.jpg" }}
-      {{ $image_smaller := .Resize "400x250 q95 Linear" }} 
+      {{ $image_smaller := .Resize "400x250 q85 Linear" }} 
       <img src="{{ $image_smaller.RelPermalink }}" >
     {{ end }}
     <p >{{- .Title -}}</p>
-  </a></div>
+  </div></a>
   {{ end }}
 
-    <!-- placeholder in the grid -->
-    <div class="thumb">
-      <svg class="placeholder" viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
-        <rect x="0" y="0" width="400" height="250" style="fill:#cccccc" />
-      </svg>
-      <p></p>
-    </div>
-    </div>
   </section>
 
 <section class="clearfix">

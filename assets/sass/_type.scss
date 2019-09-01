@@ -116,6 +116,15 @@ h1.headline {
   color:#aaaaaa;
   max-width: 15em;
   margin-bottom: 2em;
+
+  @media (max-width: $break-medium) {
+    font-size:$font-size-large * 1.15;
+  }
+
+  @media (max-width: $break-small) {
+    font-size:$font-size-large;
+  }
+
 }
 
 
