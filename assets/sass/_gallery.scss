@@ -32,7 +32,7 @@ body.section-gallery {
     img.width-big {
       width: 100%;
     }
-    img.width-standard {
+    img.width-std {
       @media (max-width: $break-large) {
         width:100%;
       }
