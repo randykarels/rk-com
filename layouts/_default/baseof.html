@@ -1,41 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
-   
-    {{ block "css" .}}
-      {{ $style := resources.Get "sass/main.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
-      <link rel="stylesheet" href="{{ $style.RelPermalink }}" media="screen">  
-    {{ end }}
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="320">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin>
-  </head>
+    <head>
+        <meta charset="utf-8" />
+        <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
 
-  {{ $bodyKlass := "section-default"}}
-  {{ if .Params.bodyKlass }}
-    {{ $bodyKlass = .Params.bodyKlass }}
-  {{ else if .IsHome }}
-    {{ $bodyKlass = "section-home"}}
-  {{ else }}
-    {{ $bodyKlass = (printf "section-%s" .Section ) }}
-  {{ end }}
-  <body class="{{ $bodyKlass }}">
+        {{ block "css" .}} {{ $style := resources.Get "sass/main.scss" |
+        resources.ToCSS | resources.Minify | resources.Fingerprint }}
+        <link
+            rel="stylesheet"
+            href="{{ $style.RelPermalink }}"
+            media="screen"
+        />
+        {{ end }}
+        <meta name="HandheldFriendly" content="True" />
+        <meta name="MobileOptimized" content="320" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+        <link
+            rel="preconnect"
+            href="https://fonts.googleapis.com/"
+            crossorigin
+        />
+    </head>
 
-   <nav>
-    <a href="/">home</a>
-    <a href="/blog">blog</a>
-    <a href="/resume">resume</a>
-    <a href="/gallery">photos</a>
-   </nav>
+    {{ $bodyKlass := "section-default"}} {{ if .Params.bodyKlass }} {{
+    $bodyKlass = .Params.bodyKlass }} {{ else if .IsHome }} {{ $bodyKlass =
+    "section-home"}} {{ else }} {{ $bodyKlass = (printf "section-%s" .Section )
+    }} {{ end }}
+    <body class="{{ $bodyKlass }}">
+        <nav>
+            <a href="/">home</a>
+            <a href="/blog">blog</a>
+            <a href="/gallery">photos</a>
+        </nav>
 
-   <div class="page">
-    {{ block "main" . }}
-      {{ .Content }}
-    {{ end }}
-  </div>
+        <div class="page">{{ block "main" . }} {{ .Content }} {{ end }}</div>
 
-  {{ partial "footer.html" . }}
+        {{ partial "footer.html" . }}
+    </body>
+</html>
