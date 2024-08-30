@@ -4,8 +4,7 @@
         <meta charset="utf-8" />
         <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
 
-        {{ block "css" .}} {{ $style := resources.Get "sass/main.scss" |
-        resources.ToCSS | resources.Minify | resources.Fingerprint }}
+        {{ block "css" .}} {{ $style := resources.Get "sass/main.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
         <link
             rel="stylesheet"
             href="{{ $style.RelPermalink }}"
