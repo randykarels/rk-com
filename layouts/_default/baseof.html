@@ -22,10 +22,11 @@
         />
     </head>
 
-    {{ $bodyKlass := "section-default"}} {{ if .Params.bodyKlass }} {{
-    $bodyKlass = .Params.bodyKlass }} {{ else if .IsHome }} {{ $bodyKlass =
-    "section-home"}} {{ else }} {{ $bodyKlass = (printf "section-%s" .Section )
-    }} {{ end }}
+    {{ $bodyKlass := "section-default"}}
+    {{ if .Params.bodyKlass }} {{ $bodyKlass = .Params.bodyKlass }}
+    {{ else if .IsHome }} {{ $bodyKlass = "section-home"}}
+    {{ else }} {{ $bodyKlass = (printf "section-%s" .Section )}}
+    {{ end }}
     <body class="{{ $bodyKlass }}">
         <nav>
             <a href="/">home</a>
