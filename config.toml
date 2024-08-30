@@ -3,5 +3,8 @@ languageCode = "en-us"
 title = "A website, of sorts"
 
 [params]
-  description = "test with hugo"
-  author = "Randy Karels"
+description = "test with hugo"
+author = "Randy Karels"
+
+[markup.goldmark.renderer]
+unsafe = true
