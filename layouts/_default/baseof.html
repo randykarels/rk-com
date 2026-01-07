@@ -4,29 +4,19 @@
         <meta charset="utf-8" />
         <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
 
-        {{ block "css" .}} {{ $style := resources.Get "sass/main.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
-        <link
-            rel="stylesheet"
-            href="{{ $style.RelPermalink }}"
-            media="screen"
-        />
+        {{ block "css" .}} {{ $style := resources.Get "sass/main.scss" | css.Sass | resources.Minify |
+        resources.Fingerprint }}
+        <link rel="stylesheet" href="{{ $style.RelPermalink }}" media="screen" />
         {{ end }}
         <meta name="HandheldFriendly" content="True" />
         <meta name="MobileOptimized" content="320" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
-        <link
-            rel="preconnect"
-            href="https://fonts.googleapis.com/"
-            crossorigin
-        />
+        <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin />
     </head>
 
-    {{ $bodyKlass := "section-default"}}
-    {{ if .Params.bodyKlass }} {{ $bodyKlass = .Params.bodyKlass }}
-    {{ else if .IsHome }} {{ $bodyKlass = "section-home"}}
-    {{ else }} {{ $bodyKlass = (printf "section-%s" .Section )}}
-    {{ end }}
+    {{ $bodyKlass := "section-default"}} {{ if .Params.bodyKlass }} {{ $bodyKlass = .Params.bodyKlass }} {{ else if
+    .IsHome }} {{ $bodyKlass = "section-home"}} {{ else }} {{ $bodyKlass = (printf "section-%s" .Section )}} {{ end }}
     <body class="{{ $bodyKlass }}">
         <nav>
             <a href="/">home</a>
