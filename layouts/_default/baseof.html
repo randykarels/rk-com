@@ -4,15 +4,31 @@
         <meta charset="utf-8" />
         <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
 
-        {{ block "css" .}} {{ $style := resources.Get "sass/main.scss" | css.Sass | resources.Minify |
-        resources.Fingerprint }}
-        <link rel="stylesheet" href="{{ $style.RelPermalink }}" media="screen" />
+        {{ block "css" . }} {{ $style := resources.Get "css/main.css" | resources.Minify | resources.Fingerprint }}
+        <link
+            rel="stylesheet"
+            href="{{ $style.RelPermalink }}"
+            integrity="{{ $style.Data.Integrity }}"
+            crossorigin="anonymous"
+            media="screen"
+        />
         {{ end }}
         <meta name="HandheldFriendly" content="True" />
         <meta name="MobileOptimized" content="320" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
-        <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin />
+
+        <!-- Font loading: preconnect first, then load font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <!-- Fira Sans (active) -->
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;400;600&display=swap"
+        />
+        <!-- Source Sans Pro (uncomment to use) -->
+        <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;700&display=swap" /> -->
+        <!-- Alegreya Sans (uncomment to use) -->
+        <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300;400;700&display=swap" /> -->
     </head>
 
     {{ $bodyKlass := "section-default"}} {{ if .Params.bodyKlass }} {{ $bodyKlass = .Params.bodyKlass }} {{ else if
